@@ -16,7 +16,7 @@ class Counter extends React.Component {
     }
     handleCounterChangePlus = () => {
         if (this.state.number >= 10) {
-            this.setState({ error: "Nummber must less than 10" })
+            this.setState({ error: "Number must be less than 10" })
         }
         else {
             this.setState({number: this.state.number + 1})
@@ -30,7 +30,7 @@ class Counter extends React.Component {
                     <button onClick={this.handleCounterChangeMinus}>-</button>
                     <span>{this.state.number}</span>
                     <button onClick={this.handleCounterChangePlus}>+</button>
-                    <div><p>{this.state.error}</p></div>
+                    <p>{this.state.error}</p>
                 </div>
             </>
         )
