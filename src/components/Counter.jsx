@@ -7,10 +7,11 @@ class Counter extends React.Component {
     }
     handleCounterChangeMinus = () => {
         if(this.state.number <= 0) {
-            window.alert("Number must be greater than 0")
+            // window.alert("Number must be greater than 0")
+            this.setState({ error: "Number must be greater than 0" })
         }
         else{
-            this.setState({number: this.state.number - 1})
+            this.setState({ number: this.state.number - 1, error: ''})
         }
         
     }
@@ -19,9 +20,19 @@ class Counter extends React.Component {
             this.setState({ error: "Number must be less than 10" })
         }
         else {
-            this.setState({number: this.state.number + 1})
+            this.setState({number: this.state.number + 1, error: ''})
         }
     }
+
+    componentDidMount() {
+        console.log('component did mount berjalan')
+        console.log(this.state)
+    }
+    componentDidUpdate() {
+        console.log('component did update berjalan')
+        console.log(this.state)
+    }
+    
     render() {
         return(
             <>
